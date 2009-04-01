@@ -1,0 +1,15 @@
+<?php
+// $Id$
+
+/**
+ * Implementation of hook_service().
+ */
+function flag_service_service() {
+  module_load_include('service-def.inc', 'flag_service');
+  return _flag_service_service();
+}
+
+function flag_service_flag_access($action, $flag_name, $content_id) {
+  $flag = flag_get_flag($flag_name);
+  return flag_access($flag);
+}
