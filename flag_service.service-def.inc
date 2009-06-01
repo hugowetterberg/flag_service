@@ -45,7 +45,7 @@ function _flag_service_service() {
           '#type'           => 'string',
           '#description'    => t('The content subtype usually the node content type.')),
       ),
-      '#return'           => 'bool',
+      '#return'           => 'array',
       '#help'             => t('Get the avaliable flags to set or unset for a content type.')
     ),
     array(
@@ -64,7 +64,7 @@ function _flag_service_service() {
           '#type'           => 'int',
           '#description'    => t('The id of the content to get the flags for.')),
       ),
-      '#return'           => 'bool',
+      '#return'           => 'array',
       '#help'             => t('Get the flags for a content item.')
     ),
   );
