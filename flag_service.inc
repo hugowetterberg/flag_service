@@ -2,8 +2,9 @@
 // $Id$
 
 function flag_service_get_content_flags($content_type, $content_id) {
-  $flags = flag_get_content_flags($content_type, $content_id);
-  return $flags ? $flags : array();
+  global $user;
+  $flags = flag_get_content_flags($content_type, $content_id, $user);
+  return $flags ? $flags[$user->uid] : array();
 }
 
 function flag_service_get_flags($content_type=NULL, $content_subtype=NULL) {
